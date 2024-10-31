@@ -11,6 +11,31 @@
         href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700&display=swap"
         rel="stylesheet">
     <title>SCREAMFLIX</title>
+    <style>
+        body {
+            background-color: #121212;
+            color: #fff;
+            font-family: 'Chakra Petch', sans-serif;
+        }
+
+        .info-filme {
+            display: none;
+            position: absolute;
+            background-color: #333;
+            padding: 10px;
+            border-radius: 5px;
+            z-index: 10;
+        }
+
+        .info-container {
+            position: relative;
+            display: inline-block;
+        }
+
+        .info-container:hover .info-filme {
+            display: block;
+        }
+    </style>
 </head>
 
 <body>
@@ -65,7 +90,13 @@
                 <a href="https://www.youtube.com/watch?v=xKJmEC5ieOk" target="_blank">
                     <button>Assistir</button>
                 </a>
-                <button onclick="mostrarInformacoes()">Mais informações</button>
+                <div class="info-container">
+                    <button>Mais informações</button>
+                    <div class="info-filme">Um grupo de crianças enfrenta uma entidade maligna que assume a forma de seus piores medos, incluindo o palhaço Pennywise. Juntos, eles devem lutar para sobreviver e resgatar seus amigos desaparecidos.</div>
+                </div>
+            </div>
+            <div class="info-container">
+                <p>Último dia para assistir a este título: 3 de novembro</p>
             </div>
         </div>
         <div class="chamada-video">
@@ -107,9 +138,7 @@
     </section>
 
     <script>
-        function mostrarInformacoes() {
-            alert("IT: A COISA (2017)\n\nSinopse: Um grupo de crianças enfrenta uma entidade maligna que assume a forma de seus piores medos, incluindo o palhaço Pennywise. Juntos, eles devem lutar para sobreviver e resgatar seus amigos desaparecidos.");
-        }
+        // A sinopse agora aparecerá apenas quando você passar o mouse sobre o botão "Mais informações".
     </script>
 </body>
 
