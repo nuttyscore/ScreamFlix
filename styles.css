@@ -1,32 +1,73 @@
 body {
     margin: 0;
     font-family: 'Chakra Petch', sans-serif;
+    background-color: #141414;
+    color: #fff;
 }
 
 header {
-    background-color: #1a1a1a;
-    padding: 20px;
-    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #000;
 }
 
-header .logo {
-    font-size: 2em;
+.logo {
+    font-size: 2.5rem;
     font-weight: bold;
+    color: #e50914;
 }
 
 nav ul {
     list-style: none;
-    padding: 0;
+    display: flex;
+    gap: 20px;
 }
 
 nav ul li {
-    display: inline;
-    margin: 0 15px;
+    position: relative; /* Necessário para posicionar o submenu */
 }
 
 nav ul li a {
-    color: white;
+    color: #fff;
     text-decoration: none;
+    font-weight: 500;
+}
+
+.submenu {
+    display: none; /* Oculta o submenu por padrão */
+    position: absolute; /* Permite que o submenu se posicione em relação ao item pai */
+    top: 100%; /* Posiciona o submenu abaixo do item pai */
+    left: 0;
+    background-color: #000;
+    padding: 10px 0;
+    list-style: none;
+    z-index: 1000; /* Certifica-se de que o submenu fique sobre outros elementos */
+}
+
+nav ul li:hover .submenu {
+    display: block; /* Exibe o submenu ao passar o mouse */
+}
+
+.search-form {
+    display: flex;
+    align-items: center;
+}
+
+.search-form input {
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+}
+
+.search-form button {
+    padding: 5px 10px;
+    background-color: #e50914;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
 .chamada {
@@ -34,22 +75,80 @@ nav ul li a {
     align-items: center;
     justify-content: space-between;
     padding: 20px;
+    background-image: url('https://www.example.com/background-image.jpg'); /* Substitua pela URL da imagem de fundo */
+    background-size: cover;
+    background-position: center;
+    height: 400px;
 }
 
-.chamada-video {
-    flex: 1;
-    margin-left: 20px;
+.chamada-texto {
+    max-width: 600px;
+}
+
+.chamada-texto h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.chamada-texto p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.buttons button {
+    padding: 10px 20px;
+    margin-right: 10px;
+    background-color: #e50914;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.buttons button:hover {
+    background-color: #b0070d; /* muda a cor do botão ao passar o mouse */
+    transition: background-color 0.3s; /* efeito suave na transição de cor */
+}
+
+.chamada-video iframe {
+    width: 560px;
+    height: 315px;
+    max-width: 100%;
 }
 
 .categoria {
     padding: 20px;
 }
 
+.categoria h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
 .categoria-videos {
     display: flex;
+    gap: 10px;
     flex-wrap: wrap;
 }
 
 .categoria-videos a {
-    margin: 10px;
+    flex: 1 1 calc(25% - 10px);
+    max-width: 100%;
+    display: block;
+}
+
+.categoria-videos img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+@media (max-width: 768px) {
+    .chamada-texto h1 {
+        font-size: 2rem;
+    }
+
+    .buttons button {
+        padding: 8px 15px;
+    }
 }
