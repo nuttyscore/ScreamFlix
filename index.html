@@ -7,7 +7,9 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700&display=swap"
+        rel="stylesheet">
     <title>SCREAMFLIX</title>
     <style>
         body {
@@ -70,8 +72,8 @@
                     </ul>
                 </li>
                 <li>
-                    <form action="#" method="GET" class="search-form" onsubmit="return searchMovies()">
-                        <input type="text" id="searchInput" placeholder="Buscar..." />
+                    <form action="#" method="GET" class="search-form">
+                        <input type="text" placeholder="Buscar..." />
                         <button type="submit">🔍</button>
                     </form>
                 </li>
@@ -110,56 +112,33 @@
         <div class="categoria-videos">
             <a href="https://www.youtube.com/watch?v=fW77XBw9UFg">
                 <img src="https://img.youtube.com/vi/fW77XBw9UFg/maxresdefault.jpg" alt="Paciente 11" />
-                <div class="info-filme">Um médico que trabalha em um hospital psiquiátrico se vê envolvido em um experimento que altera a mente de um paciente. As consequências se tornam cada vez mais aterrorizantes.</div>
             </a>
             <a href="https://www.youtube.com/watch?v=NyZlTIk3gcw">
                 <img src="https://img.youtube.com/vi/NyZlTIk3gcw/maxresdefault.jpg" alt="O Massacre da Serra Elétrica" />
-                <div class="info-filme">Um grupo de amigos visita uma casa no campo e se depara com um canibal aterrorizante. Eles lutam por suas vidas em um jogo mortal de sobrevivência.</div>
             </a>
             <a href="https://www.youtube.com/watch?v=WkBhoZ4YTkI">
                 <img src="https://img.youtube.com/vi/WkBhoZ4YTkI/maxresdefault.jpg" alt="Halloween (2018)" />
-                <div class="info-filme">Laurie Strode se prepara para o retorno de Michael Myers, um assassino que ela já enfrentou, em uma noite de Halloween repleta de tensão e terror.</div>
             </a>
             <a href="https://www.youtube.com/watch?v=H9iEgzwg3ws">
                 <img src="https://img.youtube.com/vi/H9iEgzwg3ws/maxresdefault.jpg" alt="A Entidade" />
-                <div class="info-filme">Um jornalista investiga uma série de assassinatos e descobre um culto sinistro que cultiva um ser maligno em sua busca por poder.</div>
             </a>
             <a href="https://www.youtube.com/watch?v=mcyDxRQZ6GM">
                 <img src="https://img.youtube.com/vi/mcyDxRQZ6GM/maxresdefault.jpg" alt="A Libertação" />
-                <div class="info-filme">Um jovem é possuído por um espírito maligno após participar de uma sessão de espiritismo e deve lutar para se libertar antes que seja tarde demais.</div>
             </a>
             <a href="https://www.youtube.com/watch?v=Kp_-KZH_vlQ">
                 <img src="https://img.youtube.com/vi/Kp_-KZH_vlQ/maxresdefault.jpg" alt="O Grito" />
-                <div class="info-filme">Uma maldição se espalha através de uma casa, fazendo com que aqueles que entram fiquem obcecados e enlouqueçam. Uma investigadora busca descobrir a origem do terror.</div>
             </a>
             <a href="https://www.youtube.com/watch?v=wE29FTldZHk">
                 <img src="https://img.youtube.com/vi/wE29FTldZHk/maxresdefault.jpg" alt="Annabelle 3" />
-                <div class="info-filme">Os jovens amigos de Judy invocam Annabelle, que traz consigo uma série de eventos sobrenaturais e assustadores em uma noite de terror.</div>
             </a>
             <a href="https://www.youtube.com/watch?v=n-fCcsL-Qgc">
                 <img src="https://img.youtube.com/vi/n-fCcsL-Qgc/maxresdefault.jpg" alt="Sorria Você é o Próximo" />
-                <div class="info-filme">Após a morte de sua amiga, uma jovem se vê perseguida por uma força sobrenatural que a obriga a lidar com seus medos mais profundos.</div>
             </a>
         </div>
     </section>
 
     <script>
-        function searchMovies() {
-            const input = document.getElementById('searchInput');
-            const filter = input.value.toLowerCase();
-            const videos = document.querySelectorAll('.categoria-videos a');
-
-            videos.forEach(video => {
-                const title = video.querySelector('img').alt.toLowerCase();
-                if (title.includes(filter)) {
-                    video.style.display = '';
-                } else {
-                    video.style.display = 'none';
-                }
-            });
-
-            return false; // Evita o envio do formulário
-        }
+        // A sinopse agora aparecerá apenas quando você passar o mouse sobre o botão "Mais informações".
     </script>
 </body>
 
