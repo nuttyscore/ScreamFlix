@@ -44,6 +44,24 @@
         img:hover {
             transform: scale(1.05);
         }
+        .search-container {
+            text-align: center;
+            margin: 20px;
+        }
+        input[type="text"] {
+            padding: 10px;
+            width: 300px;
+            border: none;
+            border-radius: 5px;
+        }
+        input[type="submit"] {
+            padding: 10px;
+            background-color: #ff0000;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
@@ -52,6 +70,13 @@
     <h1>Bem-vindo ao Screamflix</h1>
     <p>Seu destino para os melhores filmes de terror!</p>
 </header>
+
+<div class="search-container">
+    <form>
+        <input type="text" placeholder="Pesquisar filmes..." name="search">
+        <input type="submit" value="Buscar">
+    </form>
+</div>
 
 <section class="categoria">
     <h2>Filmes e séries de terror</h2>
