@@ -11,31 +11,6 @@
         href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700&display=swap"
         rel="stylesheet">
     <title>SCREAMFLIX</title>
-    <style>
-        body {
-            background-color: #121212;
-            color: #fff;
-            font-family: 'Chakra Petch', sans-serif;
-        }
-
-        .info-filme {
-            display: none;
-            position: absolute;
-            background-color: #333;
-            padding: 10px;
-            border-radius: 5px;
-            z-index: 10;
-        }
-
-        .info-container {
-            position: relative;
-            display: inline-block;
-        }
-
-        .info-container:hover .info-filme {
-            display: block;
-        }
-    </style>
 </head>
 
 <body>
@@ -82,64 +57,52 @@
         </nav>
     </header>
 
-    <section class="chamada">
-        <div class="chamada-texto">
-            <h1>IT: A COISA</h1>
-            <p>#terror #clássico</p>
-            <div class="buttons">
-                <a href="https://www.youtube.com/watch?v=xKJmEC5ieOk" target="_blank">
+    <main>
+        <section class="chamada">
+            <div class="chamada-texto">
+                <h1>IT: A COISA</h1>
+                <p>#terror #clássico</p>
+                <div class="buttons">
                     <button>Assistir</button>
-                </a>
-                <div class="info-container">
                     <button>Mais informações</button>
-                    <div class="info-filme">Um grupo de crianças enfrenta uma entidade maligna que assume a forma de seus piores medos, incluindo o palhaço Pennywise. Juntos, eles devem lutar para sobreviver e resgatar seus amigos desaparecidos.</div>
                 </div>
             </div>
-            <div class="info-container">
-                <p>Último dia para assistir a este título: 3 de novembro</p>
+            <div class="chamada-video">
+                <iframe width="100%" height="315" src="https://www.youtube.com/embed/xKJmEC5ieOk" title="Trailer de IT: A COISA"
+                    frameborder="0" allowfullscreen></iframe>
             </div>
-        </div>
-        <div class="chamada-video">
-            <iframe width="100%" height="315" src="https://www.youtube.com/embed/xKJmEC5ieOk" title="YouTube video player"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        </div>
-    </section>
+        </section>
 
-    <section class="categoria">
-        <h2>Filmes e séries de terror</h2>
-        <div class="categoria-videos">
-            <a href="https://www.youtube.com/watch?v=fW77XBw9UFg">
-                <img src="https://img.youtube.com/vi/fW77XBw9UFg/maxresdefault.jpg" alt="Paciente 11" />
-            </a>
-            <a href="https://www.youtube.com/watch?v=NyZlTIk3gcw">
-                <img src="https://img.youtube.com/vi/NyZlTIk3gcw/maxresdefault.jpg" alt="O Massacre da Serra Elétrica" />
-            </a>
-            <a href="https://www.youtube.com/watch?v=WkBhoZ4YTkI">
-                <img src="https://img.youtube.com/vi/WkBhoZ4YTkI/maxresdefault.jpg" alt="Halloween (2018)" />
-            </a>
-            <a href="https://www.youtube.com/watch?v=H9iEgzwg3ws">
-                <img src="https://img.youtube.com/vi/H9iEgzwg3ws/maxresdefault.jpg" alt="A Entidade" />
-            </a>
-            <a href="https://www.youtube.com/watch?v=mcyDxRQZ6GM">
-                <img src="https://img.youtube.com/vi/mcyDxRQZ6GM/maxresdefault.jpg" alt="A Libertação" />
-            </a>
-            <a href="https://www.youtube.com/watch?v=Kp_-KZH_vlQ">
-                <img src="https://img.youtube.com/vi/Kp_-KZH_vlQ/maxresdefault.jpg" alt="O Grito" />
-            </a>
-            <a href="https://www.youtube.com/watch?v=wE29FTldZHk">
-                <img src="https://img.youtube.com/vi/wE29FTldZHk/maxresdefault.jpg" alt="Annabelle 3" />
-            </a>
-            <a href="https://www.youtube.com/watch?v=n-fCcsL-Qgc">
-                <img src="https://img.youtube.com/vi/n-fCcsL-Qgc/maxresdefault.jpg" alt="Sorria Você é o Próximo" />
-            </a>
-        </div>
-    </section>
-
-    <script>
-        // A sinopse agora aparecerá apenas quando você passar o mouse sobre o botão "Mais informações".
-    </script>
+        <section class="categoria">
+            <h2>Filmes e séries de terror</h2>
+            <div class="categoria-videos">
+                <a href="https://www.youtube.com/watch?v=GOlHbGSiO7Q">
+                    <img src="https://img.youtube.com/vi/GOlHbGSiO7Q/maxresdefault.jpg" alt="Pôster do filme Invocação do Mal 3" />
+                </a>
+                <a href="https://www.youtube.com/watch?v=O8A_Fqz-ZuQ">
+                    <img src="https://img.youtube.com/vi/O8A_Fqz-ZuQ/maxresdefault.jpg" alt="Pôster do filme O Massacre da Serra Elétrica" />
+                </a>
+                <a href="https://www.youtube.com/watch?v=FEt2JMeKKi4">
+                    <img src="https://img.youtube.com/vi/FEt2JMeKKi4/maxresdefault.jpg" alt="Pôster do filme Halloween (2018)" />
+                </a>
+                <a href="https://www.youtube.com/watch?v=yQ7vwg2AZ-0">
+                    <img src="https://img.youtube.com/vi/yQ7vwg2AZ-0/maxresdefault.jpg" alt="Pôster do filme A Entidade" />
+                </a>
+                <a href="https://www.youtube.com/watch?v=yM9sKpQ9OhM">
+                    <img src="https://img.youtube.com/vi/yM9sKpQ9OhM/maxresdefault.jpg" alt="Pôster do filme A Freira" />
+                </a>
+                <a href="https://www.youtube.com/watch?v=8BISFVu6jGg">
+                    <img src="https://img.youtube.com/vi/8BISFVu6jGg/maxresdefault.jpg" alt="Pôster do filme O Grito" />
+                </a>
+                <a href="https://www.youtube.com/watch?v=RqQTsVplNEE">
+                    <img src="https://img.youtube.com/vi/RqQTsVplNEE/maxresdefault.jpg" alt="Pôster do filme Annabelle 3" />
+                </a>
+                <a href="https://www.youtube.com/watch?v=qgjdlp3yxLg">
+                    <img src="https://img.youtube.com/vi/qgjdlp3yxLg/maxresdefault.jpg" alt="Pôster do filme Invocação do Mal 2" />
+                </a>
+            </div>
+        </section>
+    </main>
 </body>
 
 </html>
