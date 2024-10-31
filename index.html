@@ -62,8 +62,10 @@
             <h1>IT: A COISA</h1>
             <p>#terror #clássico</p>
             <div class="buttons">
-                <button>Assistir</button>
-                <button>Mais informações</button>
+                <a href="https://www.youtube.com/watch?v=xKJmEC5ieOk" target="_blank">
+                    <button>Assistir</button>
+                </a>
+                <button onclick="mostrarInformacoes()">Mais informações</button>
             </div>
         </div>
         <div class="chamada-video">
@@ -77,8 +79,8 @@
     <section class="categoria">
         <h2>Filmes e séries de terror</h2>
         <div class="categoria-videos">
-            <a href="https://www.youtube.com/watch?v=apDcuw2L6sA">
-                <img src="https://img.youtube.com/vi/apDcuw2L6sA/maxresdefault.jpg" alt="Invocação do Mal 3" />
+            <a href="https://www.youtube.com/watch?v=apDcuw2L6s">
+                <img src="https://img.youtube.com/vi/apDcuw2L6s/maxresdefault.jpg" alt="Invocação do Mal 3" />
             </a>
             <a href="https://www.youtube.com/watch?v=NyZlTIk3gcw">
                 <img src="https://img.youtube.com/vi/NyZlTIk3gcw/maxresdefault.jpg" alt="O Massacre da Serra Elétrica" />
@@ -103,6 +105,12 @@
             </a>
         </div>
     </section>
+
+    <script>
+        function mostrarInformacoes() {
+            alert("IT: A COISA (2017)\n\nSinopse: Um grupo de crianças enfrenta uma entidade maligna que assume a forma de seus piores medos, incluindo o palhaço Pennywise. Juntos, eles devem lutar para sobreviver e resgatar seus amigos desaparecidos.");
+        }
+    </script>
 </body>
 
 </html>
