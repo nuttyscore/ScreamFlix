@@ -7,9 +7,7 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700&display=swap" rel="stylesheet">
     <title>SCREAMFLIX</title>
     <style>
         body {
@@ -25,6 +23,7 @@
             padding: 10px;
             border-radius: 5px;
             z-index: 10;
+            width: 300px;
         }
 
         .info-container {
@@ -34,6 +33,13 @@
 
         .info-container:hover .info-filme {
             display: block;
+        }
+
+        .categoria-videos a img {
+            width: 100%; /* Para garantir que a imagem ocupe toda a largura do link */
+            max-width: 200px; /* Limita a largura máxima das imagens */
+            border-radius: 5px; /* Bordas arredondadas para as imagens */
+            margin: 5px; /* Margem para espaçamento */
         }
     </style>
 </head>
@@ -137,9 +143,6 @@
         </div>
     </section>
 
-    <script>
-        // A sinopse agora aparecerá apenas quando você passar o mouse sobre o botão "Mais informações".
-    </script>
 </body>
 
 </html>
