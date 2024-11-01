@@ -34,6 +34,12 @@
         .info-container:hover .info-filme {
             display: block;
         }
+
+        .categoria-videos img {
+            width: 200px;
+            height: 120px;
+            object-fit: cover;
+        }
     </style>
 </head>
 
@@ -110,7 +116,7 @@
 
     <section class="categoria">
         <h2>Filmes e séries de terror</h2>
-        <div class="categoria-videos">
+        <div class="categoria-videos" id="catalogo-videos">
             <a href="https://www.youtube.com/watch?v=fW77XBw9UFg">
                 <img src="https://img.youtube.com/vi/fW77XBw9UFg/maxresdefault.jpg" alt="Paciente 11" />
             </a>
@@ -135,19 +141,6 @@
             <a href="https://www.youtube.com/watch?v=n-fCcsL-Qgc">
                 <img src="https://img.youtube.com/vi/n-fCcsL-Qgc/maxresdefault.jpg" alt="Sorria Você é o Próximo" />
             </a>
-            <!-- Novos filmes adicionados -->
-            <a href="https://www.youtube.com/watch?v=80TkoITxSBg&list=PLvi6CuFU-yPNlJdY94QEqs55V2jv1D6pl&index=2">
-                <img src="https://img.youtube.com/vi/80TkoITxSBg/maxresdefault.jpg" alt="Os Demônios de Dorothy Mills" />
-            </a>
-            <a href="https://www.youtube.com/watch?v=wPNlXrUzqXA&list=PLvi6CuFU-yPNlJdY94QEqs55V2jv1D6pl&rco=1">
-                <img src="https://img.youtube.com/vi/wPNlXrUzqXA/maxresdefault.jpg" alt="Bethany - A Amiga Imaginária" />
-            </a>
-            <a href="https://www.youtube.com/watch?v=BB-tUSjrdXs&list=PLvi6CuFU-yPNlJdY94QEqs55V2jv1D6pl&index=4">
-                <img src="https://img.youtube.com/vi/BB-tUSjrdXs/maxresdefault.jpg" alt="Crianças Malignas" />
-            </a>
-            <a href="https://www.youtube.com/watch?v=uiI2GTzGXqQ&list=PLvi6CuFU-yPNlJdY94QEqs55V2jv1D6pl&index=3">
-                <img src="https://img.youtube.com/vi/uiI2GTzGXqQ/maxresdefault.jpg" alt="Orfanato" />
-            </a>
         </div>
     </section>
 
@@ -159,7 +152,8 @@
                 sinopse: "Um grupo de crianças enfrenta uma entidade maligna que assume a forma de seus piores medos, incluindo o palhaço Pennywise. Juntos, eles devem lutar para sobreviver e resgatar seus amigos desaparecidos.",
                 trailer: "https://www.youtube.com/embed/xKJmEC5ieOk",
                 link: "https://www.youtube.com/watch?v=xKJmEC5ieOk",
-                dataDisponibilidade: "Último dia para assistir a este título: 3 de novembro"
+                dataDisponibilidade: "Último dia para assistir a este título: 3 de novembro",
+                thumbnail: "https://img.youtube.com/vi/xKJmEC5ieOk/maxresdefault.jpg"
             },
             "A Entidade": {
                 titulo: "A Entidade",
@@ -167,7 +161,8 @@
                 sinopse: "Um escritor encontra uma caixa de filmes caseiros que mostram assassinatos de famílias por uma entidade sobrenatural.",
                 trailer: "https://www.youtube.com/embed/H9iEgzwg3ws",
                 link: "https://www.youtube.com/watch?v=H9iEgzwg3ws",
-                dataDisponibilidade: "Disponível até 10 de novembro"
+                dataDisponibilidade: "Disponível até 10 de novembro",
+                thumbnail: "https://img.youtube.com/vi/H9iEgzwg3ws/maxresdefault.jpg"
             },
             "Annabelle 3": {
                 titulo: "Annabelle 3",
@@ -175,10 +170,13 @@
                 sinopse: "Os Warrens colocam a boneca Annabelle em uma sala de artefatos, mas ela desperta forças malignas que ameaçam sua filha e seus amigos.",
                 trailer: "https://www.youtube.com/embed/wE29FTldZHk",
                 link: "https://www.youtube.com/watch?v=wE29FTldZHk",
-                dataDisponibilidade: "Disponível até 15 de novembro"
+                dataDisponibilidade: "Disponível até 15 de novembro",
+                thumbnail: "https://img.youtube.com/vi/wE29FTldZHk/maxresdefault.jpg"
             },
             // Adicione outros filmes ao catálogo conforme necessário
         };
+
+        let filmeAtual = "IT: A COISA";  // Armazenar o nome do filme atual exibido
 
         function pesquisarFilme(event) {
             event.preventDefault();
@@ -186,6 +184,14 @@
             const filmeEncontrado = Object.values(filmes).find(filme => filme.titulo.toLowerCase() === pesquisa);
 
             if (filmeEncontrado) {
+                // Substituir o filme anterior no catálogo
+                const catalogo = document.getElementById("catalogo-videos");
+                catalogo.innerHTML += `<a href="${filmes[filmeAtual].link}">
+                                           <img src="${filmes[filmeAtual].thumbnail}" alt="${filmes[filmeAtual].titulo}" />
+                                       </a>`;
+                
+                // Atualizar as informações do filme atual
+                filmeAtual = filmeEncontrado.titulo;
                 document.getElementById("titulo-filme").innerText = filmeEncontrado.titulo;
                 document.getElementById("tags-filme").innerText = filmeEncontrado.tags;
                 document.getElementById("sinopse-filme").innerText = filmeEncontrado.sinopse;
