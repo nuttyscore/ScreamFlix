@@ -1,148 +1,83 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Screamflix</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700&display=swap" rel="stylesheet">
-    <title>SCREAMFLIX</title>
-    <style>
-        body {
-            background-color: #121212;
-            color: #fff;
-            font-family: 'Chakra Petch', sans-serif;
-        }
-
-        .info-filme {
-            display: none;
-            position: absolute;
-            background-color: #333;
-            padding: 10px;
-            border-radius: 5px;
-            z-index: 10;
-            width: 300px;
-        }
-
-        .info-container {
-            position: relative;
-            display: inline-block;
-        }
-
-        .info-container:hover .info-filme {
-            display: block;
-        }
-
-        .categoria-videos a img {
-            width: 100%; /* Para garantir que a imagem ocupe toda a largura do link */
-            max-width: 200px; /* Limita a largura máxima das imagens */
-            border-radius: 5px; /* Bordas arredondadas para as imagens */
-            margin: 5px; /* Margem para espaçamento */
-        }
-    </style>
 </head>
-
 <body>
     <header>
-        <div class="logo">
-            SCREAMFLIX
-        </div>
+        <h1>Screamflix</h1>
         <nav>
             <ul>
                 <li><a href="#">Início</a></li>
-                <li>
-                    <a href="#">Séries</a>
-                    <ul class="submenu">
-                        <li><a href="#">Terror</a></li>
-                        <li><a href="#">Ação</a></li>
-                        <li><a href="#">Comédia</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#">Filmes</a>
-                    <ul class="submenu">
-                        <li><a href="#">Terror</a></li>
-                        <li><a href="#">Drama</a></li>
-                        <li><a href="#">Romance</a></li>
-                    </ul>
-                </li>
+                <li><a href="#">Categorias</a></li>
+                <li><a href="#">Novos Lançamentos</a></li>
                 <li><a href="#">Minha Lista</a></li>
-                <li>
-                    <a href="#">Navegar por Idiomas</a>
-                    <ul class="submenu">
-                        <li><a href="#">Português</a></li>
-                        <li><a href="#">Inglês</a></li>
-                        <li><a href="#">Espanhol</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <form action="#" method="GET" class="search-form">
-                        <input type="text" placeholder="Buscar..." />
-                        <button type="submit">🔍</button>
-                    </form>
-                </li>
-                <li><a href="#">Login</a></li>
             </ul>
         </nav>
     </header>
 
-    <section class="chamada">
-        <div class="chamada-texto">
-            <h1>IT: A COISA</h1>
-            <p>#terror #clássico</p>
-            <div class="buttons">
-                <a href="https://www.youtube.com/watch?v=xKJmEC5ieOk" target="_blank">
-                    <button>Assistir</button>
-                </a>
-                <div class="info-container">
-                    <button>Mais informações</button>
-                    <div class="info-filme">Um grupo de crianças enfrenta uma entidade maligna que assume a forma de seus piores medos, incluindo o palhaço Pennywise. Juntos, eles devem lutar para sobreviver e resgatar seus amigos desaparecidos.</div>
-                </div>
-            </div>
-            <div class="info-container">
-                <p>Último dia para assistir a este título: 3 de novembro</p>
-            </div>
-        </div>
-        <div class="chamada-video">
-            <iframe width="100%" height="315" src="https://www.youtube.com/embed/xKJmEC5ieOk" title="YouTube video player"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        </div>
-    </section>
-
-    <section class="categoria">
-        <h2>Filmes e séries de terror</h2>
-        <div class="categoria-videos">
-            <a href="https://www.youtube.com/watch?v=apDcuw2L6s">
-                <img src="https://img.youtube.com/vi/apDcuw2L6s/maxresdefault.jpg" alt="Invocação do Mal 3" />
-            </a>
-            <a href="https://www.youtube.com/watch?v=NyZlTIk3gcw">
-                <img src="https://img.youtube.com/vi/NyZlTIk3gcw/maxresdefault.jpg" alt="O Massacre da Serra Elétrica" />
-            </a>
-            <a href="https://www.youtube.com/watch?v=WkBhoZ4YTkI">
-                <img src="https://img.youtube.com/vi/WkBhoZ4YTkI/maxresdefault.jpg" alt="Halloween (2018)" />
-            </a>
+    <section class="destaques">
+        <h2>Filmes em Destaque</h2>
+        <div class="destaques-filmes">
             <a href="https://www.youtube.com/watch?v=H9iEgzwg3ws">
                 <img src="https://img.youtube.com/vi/H9iEgzwg3ws/maxresdefault.jpg" alt="A Entidade" />
+                <p>A Entidade</p>
             </a>
-            <a href="https://www.youtube.com/watch?v=mcyDxRQZ6GM">
-                <img src="https://img.youtube.com/vi/mcyDxRQZ6GM/maxresdefault.jpg" alt="A Libertação" />
+            <a href="https://www.youtube.com/watch?v=jFBGUT1sV40">
+                <img src="https://img.youtube.com/vi/jFBGUT1sV40/maxresdefault.jpg" alt="A Freira" />
+                <p>A Freira</p>
             </a>
             <a href="https://www.youtube.com/watch?v=Kp_-KZH_vlQ">
                 <img src="https://img.youtube.com/vi/Kp_-KZH_vlQ/maxresdefault.jpg" alt="O Grito" />
+                <p>O Grito</p>
             </a>
             <a href="https://www.youtube.com/watch?v=wE29FTldZHk">
                 <img src="https://img.youtube.com/vi/wE29FTldZHk/maxresdefault.jpg" alt="Annabelle 3" />
+                <p>Annabelle 3</p>
             </a>
             <a href="https://www.youtube.com/watch?v=n-fCcsL-Qgc">
                 <img src="https://img.youtube.com/vi/n-fCcsL-Qgc/maxresdefault.jpg" alt="Sorria Você é o Próximo" />
+                <p>Sorria Você é o Próximo</p>
             </a>
         </div>
     </section>
 
-</body>
+    <!-- Nova Barra Adicionada: Continuar Assistindo -->
+    <section class="continuar-assistindo">
+        <h2>Continuar Assistindo como Clever</h2>
+        <div class="continuar-filmes">
+            <a href="https://www.youtube.com/watch?v=80TkoITxSBg&list=PLvi6CuFU-yPNlJdY94QEqs55V2jv1D6pl&index=2">
+                <img src="https://img.youtube.com/vi/80TkoITxSBg/maxresdefault.jpg" alt="Os Demônios de Dorothy Mills" />
+                <p>Os Demônios de Dorothy Mills</p>
+            </a>
+            <a href="https://www.youtube.com/watch?v=wPNlXrUzqXA&list=PLvi6CuFU-yPNlJdY94QEqs55V2jv1D6pl&rco=1">
+                <img src="https://img.youtube.com/vi/wPNlXrUzqXA/maxresdefault.jpg" alt="Bethany - A Amiga Imaginária" />
+                <p>Bethany - A Amiga Imaginária</p>
+            </a>
+            <a href="https://www.youtube.com/watch?v=BB-tUSjrdXs&list=PLvi6CuFU-yPNlJdY94QEqs55V2jv1D6pl&index=4">
+                <img src="https://img.youtube.com/vi/BB-tUSjrdXs/maxresdefault.jpg" alt="Crianças Malignas" />
+                <p>Crianças Malignas</p>
+            </a>
+            <a href="https://www.youtube.com/watch?v=uiI2GTzGXqQ&list=PLvi6CuFU-yPNlJdY94QEqs55V2jv1D6pl&index=3">
+                <img src="https://img.youtube.com/vi/uiI2GTzGXqQ/maxresdefault.jpg" alt="Orfanato" />
+                <p>Orfanato</p>
+            </a>
+        </div>
+    </section>
 
+    <!-- Seção adicional de outras categorias -->
+    <section class="categorias">
+        <h2>Categorias</h2>
+        <div class="categorias-filmes">
+            <!-- Filmes de terror continuam aqui -->
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Screamflix. Todos os direitos reservados.</p>
+    </footer>
+</body>
 </html>
