@@ -34,34 +34,6 @@
         .info-container:hover .info-filme {
             display: block;
         }
-
-        .chamada {
-            display: flex;
-            justify-content: space-between;
-        }
-
-        .chamada-texto {
-            width: 50%;
-        }
-
-        .chamada-video {
-            width: 50%;
-        }
-
-        iframe {
-            width: 100%;
-            height: 315px;
-        }
-
-        .search-form input {
-            padding: 8px;
-            font-size: 16px;
-        }
-
-        .search-form button {
-            padding: 8px;
-            font-size: 16px;
-        }
     </style>
 </head>
 
@@ -73,47 +45,109 @@
         <nav>
             <ul>
                 <li><a href="#">Início</a></li>
-                <li><a href="#">Séries</a></li>
-                <li><a href="#">Filmes</a></li>
+                <li>
+                    <a href="#">Séries</a>
+                    <ul class="submenu">
+                        <li><a href="#">Terror</a></li>
+                        <li><a href="#">Ação</a></li>
+                        <li><a href="#">Comédia</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Filmes</a>
+                    <ul class="submenu">
+                        <li><a href="#">Terror</a></li>
+                        <li><a href="#">Drama</a></li>
+                        <li><a href="#">Romance</a></li>
+                    </ul>
+                </li>
                 <li><a href="#">Minha Lista</a></li>
                 <li>
-                    <form id="searchForm" class="search-form">
-                        <input type="text" id="searchInput" placeholder="Buscar..." />
+                    <a href="#">Navegar por Idiomas</a>
+                    <ul class="submenu">
+                        <li><a href="#">Português</a></li>
+                        <li><a href="#">Inglês</a></li>
+                        <li><a href="#">Espanhol</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <form action="#" method="GET" class="search-form" onsubmit="pesquisarFilme(event)">
+                        <input type="text" id="search-bar" placeholder="Buscar..." />
                         <button type="submit">🔍</button>
                     </form>
                 </li>
+                <li><a href="#">Login</a></li>
             </ul>
         </nav>
     </header>
 
     <section class="chamada">
         <div class="chamada-texto">
-            <h1 id="filme-titulo">IT: A COISA</h1>
-            <p id="filme-categoria">#terror #clássico</p>
+            <h1 id="titulo-filme">IT: A COISA</h1>
+            <p id="tags-filme">#terror #clássico</p>
             <div class="buttons">
-                <a href="https://www.youtube.com/watch?v=xKJmEC5ieOk" target="_blank" id="filme-link">
+                <a id="link-filme" href="https://www.youtube.com/watch?v=xKJmEC5ieOk" target="_blank">
                     <button>Assistir</button>
                 </a>
                 <div class="info-container">
                     <button>Mais informações</button>
-                    <div class="info-filme" id="filme-sinopse">Um grupo de crianças enfrenta uma entidade maligna que
-                        assume a forma de seus piores medos, incluindo o palhaço Pennywise. Juntos, eles devem lutar para
-                        sobreviver e resgatar seus amigos desaparecidos.
+                    <div class="info-filme" id="sinopse-filme">
+                        Um grupo de crianças enfrenta uma entidade maligna que assume a forma de seus piores medos, incluindo o palhaço Pennywise. Juntos, eles devem lutar para sobreviver e resgatar seus amigos desaparecidos.
                     </div>
                 </div>
             </div>
+            <div class="info-container">
+                <p id="disponibilidade-filme">Último dia para assistir a este título: 3 de novembro</p>
+            </div>
         </div>
         <div class="chamada-video">
-            <iframe id="filme-video" src="https://www.youtube.com/embed/xKJmEC5ieOk" title="YouTube video player"
-                frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen></iframe>
+            <iframe id="video-trailer" width="100%" height="315" src="https://www.youtube.com/embed/xKJmEC5ieOk"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </div>
     </section>
 
     <section class="categoria">
         <h2>Filmes e séries de terror</h2>
         <div class="categoria-videos">
-            <!-- Filmes adicionais podem ser inseridos aqui -->
+            <a href="https://www.youtube.com/watch?v=fW77XBw9UFg">
+                <img src="https://img.youtube.com/vi/fW77XBw9UFg/maxresdefault.jpg" alt="Paciente 11" />
+            </a>
+            <a href="https://www.youtube.com/watch?v=NyZlTIk3gcw">
+                <img src="https://img.youtube.com/vi/NyZlTIk3gcw/maxresdefault.jpg" alt="O Massacre da Serra Elétrica" />
+            </a>
+            <a href="https://www.youtube.com/watch?v=WkBhoZ4YTkI">
+                <img src="https://img.youtube.com/vi/WkBhoZ4YTkI/maxresdefault.jpg" alt="Halloween (2018)" />
+            </a>
+            <a href="https://www.youtube.com/watch?v=H9iEgzwg3ws">
+                <img src="https://img.youtube.com/vi/H9iEgzwg3ws/maxresdefault.jpg" alt="A Entidade" />
+            </a>
+            <a href="https://www.youtube.com/watch?v=mcyDxRQZ6GM">
+                <img src="https://img.youtube.com/vi/mcyDxRQZ6GM/maxresdefault.jpg" alt="A Libertação" />
+            </a>
+            <a href="https://www.youtube.com/watch?v=Kp_-KZH_vlQ">
+                <img src="https://img.youtube.com/vi/Kp_-KZH_vlQ/maxresdefault.jpg" alt="O Grito" />
+            </a>
+            <a href="https://www.youtube.com/watch?v=wE29FTldZHk">
+                <img src="https://img.youtube.com/vi/wE29FTldZHk/maxresdefault.jpg" alt="Annabelle 3" />
+            </a>
+            <a href="https://www.youtube.com/watch?v=n-fCcsL-Qgc">
+                <img src="https://img.youtube.com/vi/n-fCcsL-Qgc/maxresdefault.jpg" alt="Sorria Você é o Próximo" />
+            </a>
+            <!-- Novos filmes adicionados -->
+            <a href="https://www.youtube.com/watch?v=80TkoITxSBg&list=PLvi6CuFU-yPNlJdY94QEqs55V2jv1D6pl&index=2">
+                <img src="https://img.youtube.com/vi/80TkoITxSBg/maxresdefault.jpg" alt="Os Demônios de Dorothy Mills" />
+            </a>
+            <a href="https://www.youtube.com/watch?v=wPNlXrUzqXA&list=PLvi6CuFU-yPNlJdY94QEqs55V2jv1D6pl&rco=1">
+                <img src="https://img.youtube.com/vi/wPNlXrUzqXA/maxresdefault.jpg" alt="Bethany - A Amiga Imaginária" />
+            </a>
+            <a href="https://www.youtube.com/watch?v=BB-tUSjrdXs&list=PLvi6CuFU-yPNlJdY94QEqs55V2jv1D6pl&index=4">
+                <img src="https://img.youtube.com/vi/BB-tUSjrdXs/maxresdefault.jpg" alt="Crianças Malignas" />
+            </a>
+            <a href="https://www.youtube.com/watch?v=uiI2GTzGXqQ&list=PLvi6CuFU-yPNlJdY94QEqs55V2jv1D6pl&index=3">
+                <img src="https://img.youtube.com/vi/uiI2GTzGXqQ/maxresdefault.jpg" alt="Orfanato" />
+            </a>
         </div>
     </section>
 
@@ -121,113 +155,48 @@
         const filmes = {
             "IT: A COISA": {
                 titulo: "IT: A COISA",
-                categoria: "#terror #clássico",
-                sinopse: "Um grupo de crianças enfrenta uma entidade maligna que assume a forma de seus piores medos, incluindo o palhaço Pennywise.",
-                video: "https://www.youtube.com/embed/xKJmEC5ieOk",
-                link: "https://www.youtube.com/watch?v=xKJmEC5ieOk"
+                tags: "#terror #clássico",
+                sinopse: "Um grupo de crianças enfrenta uma entidade maligna que assume a forma de seus piores medos, incluindo o palhaço Pennywise. Juntos, eles devem lutar para sobreviver e resgatar seus amigos desaparecidos.",
+                trailer: "https://www.youtube.com/embed/xKJmEC5ieOk",
+                link: "https://www.youtube.com/watch?v=xKJmEC5ieOk",
+                dataDisponibilidade: "Último dia para assistir a este título: 3 de novembro"
             },
             "A Entidade": {
                 titulo: "A Entidade",
-                categoria: "#terror",
-                sinopse: "Um escritor de livros sobre crimes reais descobre uma caixa de filmes antigos em sua nova casa, revelando detalhes perturbadores sobre os assassinatos que ele está investigando.",
-                video: "https://www.youtube.com/embed/H9iEgzwg3ws",
-                link: "https://www.youtube.com/watch?v=H9iEgzwg3ws"
+                tags: "#terror #suspense",
+                sinopse: "Um escritor encontra uma caixa de filmes caseiros que mostram assassinatos de famílias por uma entidade sobrenatural.",
+                trailer: "https://www.youtube.com/embed/H9iEgzwg3ws",
+                link: "https://www.youtube.com/watch?v=H9iEgzwg3ws",
+                dataDisponibilidade: "Disponível até 10 de novembro"
             },
             "Annabelle 3": {
                 titulo: "Annabelle 3",
-                categoria: "#terror #sobrenatural",
-                sinopse: "O artefato amaldiçoado Annabelle desperta forças malignas quando é trazido para a casa dos Warren, colocando todos em perigo.",
-                video: "https://www.youtube.com/embed/wE29FTldZHk",
-                link: "https://www.youtube.com/watch?v=wE29FTldZHk"
+                tags: "#terror #sobrenatural",
+                sinopse: "Os Warrens colocam a boneca Annabelle em uma sala de artefatos, mas ela desperta forças malignas que ameaçam sua filha e seus amigos.",
+                trailer: "https://www.youtube.com/embed/wE29FTldZHk",
+                link: "https://www.youtube.com/watch?v=wE29FTldZHk",
+                dataDisponibilidade: "Disponível até 15 de novembro"
             },
-            "O Massacre da Serra Elétrica": {
-                titulo: "O Massacre da Serra Elétrica",
-                categoria: "#terror #gore",
-                sinopse: "Um grupo de amigos se vê perseguido por um assassino impiedoso conhecido como Leatherface, que utiliza uma serra elétrica para matar suas vítimas.",
-                video: "https://www.youtube.com/embed/NyZlTIk3gcw",
-                link: "https://www.youtube.com/watch?v=NyZlTIk3gcw"
-            },
-            "Halloween (2018)": {
-                titulo: "Halloween (2018)",
-                categoria: "#terror #slasher",
-                sinopse: "Quatro décadas após sobreviver a um ataque brutal de Michael Myers, Laurie Strode está pronta para um último confronto.",
-                video: "https://www.youtube.com/embed/WkBhoZ4YTkI",
-                link: "https://www.youtube.com/watch?v=WkBhoZ4YTkI"
-            },
-            "A Libertação": {
-                titulo: "A Libertação",
-                categoria: "#terror #sobrenatural",
-                sinopse: "Após um exorcismo fracassado, uma jovem garota começa a mostrar sinais de possessão demoníaca, desencadeando eventos aterrorizantes.",
-                video: "https://www.youtube.com/embed/mcyDxRQZ6GM",
-                link: "https://www.youtube.com/watch?v=mcyDxRQZ6GM"
-            },
-            "O Grito": {
-                titulo: "O Grito",
-                categoria: "#terror #sobrenatural",
-                sinopse: "Uma maldição nascida de uma raiva mortal condena todos que entram em contato com ela, levando-os a um destino trágico.",
-                video: "https://www.youtube.com/embed/Kp_-KZH_vlQ",
-                link: "https://www.youtube.com/watch?v=Kp_-KZH_vlQ"
-            },
-            "Sorria Você é o Próximo": {
-                titulo: "Sorria Você é o Próximo",
-                categoria: "#terror #thriller",
-                sinopse: "Uma família é perseguida por assassinos mascarados em um jogo mortal, onde ninguém pode confiar em ninguém.",
-                video: "https://www.youtube.com/embed/n-fCcsL-Qgc",
-                link: "https://www.youtube.com/watch?v=n-fCcsL-Qgc"
-            },
-            "Paciente 11": {
-                titulo: "Paciente 11",
-                categoria: "#terror #mistério",
-                sinopse: "Um paciente em um hospital psiquiátrico começa a perceber que sua realidade pode não ser o que parece, enquanto uma série de eventos sobrenaturais se desenrolam.",
-                video: "https://www.youtube.com/embed/fW77XBw9UFg",
-                link: "https://www.youtube.com/watch?v=fW77XBw9UFg"
-            },
-            "Os Demônios de Dorothy Mills": {
-                titulo: "Os Demônios de Dorothy Mills",
-                categoria: "#terror #sobrenatural",
-                sinopse: "Uma psiquiatra investiga o caso de Dorothy Mills, uma jovem que parece ter múltiplas personalidades e se envolve em eventos sobrenaturais.",
-                video: "https://www.youtube.com/embed/80TkoITxSBg",
-                link: "https://www.youtube.com/watch?v=80TkoITxSBg"
-            },
-            "Bethany - A Amiga Imaginária": {
-                titulo: "Bethany - A Amiga Imaginária",
-                categoria: "#terror #psicológico",
-                sinopse: "Claire retorna à casa de sua infância e começa a ser atormentada pela presença de sua antiga amiga imaginária, que pode não ser tão imaginária assim.",
-                video: "https://www.youtube.com/embed/pErI2yMD6cE",
-                link: "https://www.youtube.com/watch?v=pErI2yMD6cE"
-            },
-            "Crianças Malignas": {
-                titulo: "Crianças Malignas",
-                categoria: "#terror #mistério",
-                sinopse: "Um grupo de crianças começa a exibir um comportamento violento e perturbador, levando seus pais a um estado de terror constante.",
-                video: "https://www.youtube.com/embed/hkYCUcPtA2g",
-                link: "https://www.youtube.com/watch?v=hkYCUcPtA2g"
-            },
-            "Orfanato": {
-                titulo: "Orfanato",
-                categoria: "#terror #drama",
-                sinopse: "Uma mulher retorna ao orfanato onde cresceu e começa a vivenciar eventos inexplicáveis que estão ligados ao seu passado sombrio.",
-                video: "https://www.youtube.com/embed/H1rDVCjWWqY",
-                link: "https://www.youtube.com/watch?v=H1rDVCjWWqY"
-            }
+            // Adicione outros filmes ao catálogo conforme necessário
         };
 
-        document.getElementById("searchForm").addEventListener("submit", function (e) {
-            e.preventDefault();
-            const searchInput = document.getElementById("searchInput").value.trim();
-            const filme = filmes[searchInput];
+        function pesquisarFilme(event) {
+            event.preventDefault();
+            const pesquisa = document.getElementById("search-bar").value.trim().toLowerCase();
+            const filmeEncontrado = Object.values(filmes).find(filme => filme.titulo.toLowerCase() === pesquisa);
 
-            if (filme) {
-                document.getElementById("filme-titulo").textContent = filme.titulo;
-                document.getElementById("filme-categoria").textContent = filme.categoria;
-                document.getElementById("filme-sinopse").textContent = filme.sinopse;
-                document.getElementById("filme-video").src = filme.video;
-                document.getElementById("filme-link").href = filme.link;
+            if (filmeEncontrado) {
+                document.getElementById("titulo-filme").innerText = filmeEncontrado.titulo;
+                document.getElementById("tags-filme").innerText = filmeEncontrado.tags;
+                document.getElementById("sinopse-filme").innerText = filmeEncontrado.sinopse;
+                document.getElementById("link-filme").href = filmeEncontrado.link;
+                document.getElementById("video-trailer").src = filmeEncontrado.trailer;
+                document.getElementById("disponibilidade-filme").innerText = filmeEncontrado.dataDisponibilidade;
             } else {
-                alert("Filme não encontrado. Tente outro título.");
+                alert("Filme não encontrado.");
             }
-        });
+        }
     </script>
 </body>
 
-</html>.
+</html>
