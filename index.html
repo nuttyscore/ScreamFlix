@@ -1,158 +1,107 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Screamflix</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #111;
-            color: #fff;
-            text-align: center;
-            margin: 0;
-            padding: 20px;
-        }
-        .container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-        .filme {
-            margin: 20px;
-            width: 300px;
-            border: 2px solid #444;
-            padding: 10px;
-            border-radius: 10px;
-            background-color: #222;
-        }
-        .filme img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 10px;
-        }
-        .titulo {
-            font-size: 1.5em;
-            margin: 10px 0;
-        }
-        .tags, .sinopse, .dataDisponibilidade {
-            margin: 5px 0;
-        }
-        a {
-            color: #00ff00;
-            text-decoration: none;
-        }
-    </style>
+    <title>Screamflix - Catálogo de Filmes</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;700&display=swap">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <header>
+        <div class="logo">Screamflix</div>
+        <nav>
+            <ul>
+                <li><a href="#">Início</a></li>
+                <li><a href="#">Filmes</a></li>
+                <li><a href="#">Séries</a></li>
+                <li>
+                    <a href="#">Categorias</a>
+                    <ul class="submenu">
+                        <li><a href="#">Terror</a></li>
+                        <li><a href="#">Sobrenatural</a></li>
+                        <li><a href="#">Slasher</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        <form class="search-form">
+            <input type="text" placeholder="Buscar...">
+            <button type="submit">Buscar</button>
+        </form>
+    </header>
 
-    <h1>Bem-vindo ao Screamflix</h1>
-    <p>Assista seus filmes de terror favoritos abaixo!</p>
+    <section class="chamada">
+        <div class="chamada-texto">
+            <h1>O Terror Espera Por Você</h1>
+            <p>Descubra os filmes mais assustadores no Screamflix. Prepare-se para sentir medo!</p>
+            <div class="buttons">
+                <button>Assistir Agora</button>
+                <button>Mais Informações</button>
+            </div>
+        </div>
+        <div class="chamada-video">
+            <iframe src="https://www.youtube.com/embed/xKJmEC5ieOk" title="Trailer do Filme"></iframe>
+        </div>
+    </section>
 
-    <div class="container" id="listaFilmes"></div>
+    <section class="categoria">
+        <h2>Catálogo de Filmes</h2>
+        <div class="categoria-videos">
+            <!-- Filme 1 -->
+            <a href="https://www.youtube.com/watch?v=xKJmEC5ieOk" target="_blank">
+                <img src="https://img.youtube.com/vi/xKJmEC5ieOk/hqdefault.jpg" alt="IT: A Coisa">
+                <p><strong>IT: A COISA</strong> - Um grupo de crianças enfrenta uma entidade maligna. #terror #clássico</p>
+            </a>
 
-    <script>
-        // Estrutura de dados com todos os filmes
-        const filmes = {
-            "IT: A COISA": {
-                titulo: "IT: A COISA",
-                tags: "#terror #clássico",
-                sinopse: "Um grupo de crianças enfrenta uma entidade maligna que assume a forma de seus piores medos, incluindo o palhaço Pennywise.",
-                trailer: "https://www.youtube.com/embed/xKJmEC5ieOk",
-                link: "https://www.youtube.com/watch?v=xKJmEC5ieOk",
-                dataDisponibilidade: "Último dia para assistir: 3 de novembro"
-            },
-            "A Entidade": {
-                titulo: "A Entidade",
-                tags: "#terror #suspense",
-                sinopse: "Um escritor encontra uma caixa de filmes caseiros que mostram assassinatos de famílias por uma entidade sobrenatural.",
-                trailer: "https://www.youtube.com/embed/H9iEgzwg3ws",
-                link: "https://www.youtube.com/watch?v=H9iEgzwg3ws",
-                dataDisponibilidade: "Disponível até 10 de novembro"
-            },
-            "Annabelle 3": {
-                titulo: "Annabelle 3",
-                tags: "#terror #sobrenatural",
-                sinopse: "Os Warrens colocam a boneca Annabelle em uma sala de artefatos, mas ela desperta forças malignas que ameaçam sua filha e seus amigos.",
-                trailer: "https://www.youtube.com/embed/wE29FTldZHk",
-                link: "https://www.youtube.com/watch?v=wE29FTldZHk",
-                dataDisponibilidade: "Disponível até 15 de novembro"
-            },
-            "O Massacre da Serra Elétrica": {
-                titulo: "O Massacre da Serra Elétrica",
-                tags: "#terror #slasher",
-                sinopse: "Um grupo de amigos se depara com um maníaco que usa uma serra elétrica para caçar e matar suas vítimas em uma pequena cidade do Texas.",
-                trailer: "https://www.youtube.com/embed/NyZlTIk3gcw",
-                link: "https://www.youtube.com/watch?v=NyZlTIk3gcw",
-                dataDisponibilidade: "Disponível até 20 de novembro"
-            },
-            "Halloween (2018)": {
-                titulo: "Halloween (2018)",
-                tags: "#terror #slasher",
-                sinopse: "Michael Myers retorna 40 anos depois para confrontar Laurie Strode em um embate final.",
-                trailer: "https://www.youtube.com/embed/WkBhoZ4YTkI",
-                link: "https://www.youtube.com/watch?v=WkBhoZ4YTkI",
-                dataDisponibilidade: "Disponível até 25 de novembro"
-            },
-            "Sorria Você é o Próximo": {
-                titulo: "Sorria Você é o Próximo",
-                tags: "#terror #slasher",
-                sinopse: "Uma reunião de família se transforma em um pesadelo mortal quando assassinos mascarados começam a caçar os convidados.",
-                trailer: "https://www.youtube.com/embed/n-fCcsL-Qgc",
-                link: "https://www.youtube.com/watch?v=n-fCcsL-Qgc",
-                dataDisponibilidade: "Disponível até 30 de novembro"
-            },
-            "Invocação do Mal 3": {
-                titulo: "Invocação do Mal 3",
-                tags: "#terror #sobrenatural",
-                sinopse: "Os investigadores paranormais Ed e Lorraine Warren enfrentam um dos casos mais assustadores de suas carreiras envolvendo possessão demoníaca e assassinato.",
-                trailer: "https://www.youtube.com/embed/h9Q4zZS2v1k",
-                link: "https://www.youtube.com/watch?v=h9Q4zZS2v1k",
-                dataDisponibilidade: "Disponível até 5 de dezembro"
-            },
-            "O Grito": {
-                titulo: "O Grito",
-                tags: "#terror #sobrenatural",
-                sinopse: "Uma maldição mortal atinge aqueles que entram em contato com a casa amaldiçoada, desencadeando uma série de eventos aterrorizantes.",
-                trailer: "https://www.youtube.com/embed/Kp_-KZH_vlQ",
-                link: "https://www.youtube.com/watch?v=Kp_-KZH_vlQ",
-                dataDisponibilidade: "Disponível até 12 de dezembro"
-            },
-            "A Freira": {
-                titulo: "A Freira",
-                tags: "#terror #sobrenatural",
-                sinopse: "Quando uma freira tira a própria vida, um padre com um passado obscuro é enviado pelo Vaticano para investigar o convento amaldiçoado.",
-                trailer: "https://www.youtube.com/embed/jFBGUT1sV40",
-                link: "https://www.youtube.com/watch?v=jFBGUT1sV40",
-                dataDisponibilidade: "Disponível até 18 de dezembro"
-            }
-        };
+            <!-- Filme 2 -->
+            <a href="https://www.youtube.com/watch?v=H9iEgzwg3ws" target="_blank">
+                <img src="https://img.youtube.com/vi/H9iEgzwg3ws/hqdefault.jpg" alt="A Entidade">
+                <p><strong>A Entidade</strong> - Um escritor descobre filmes assustadores. #terror #suspense</p>
+            </a>
 
-        // Função para exibir todos os filmes
-        function mostrarFilmes() {
-            const listaFilmes = document.getElementById("listaFilmes");
-            for (const filme in filmes) {
-                const filmeInfo = filmes[filme];
+            <!-- Filme 3 -->
+            <a href="https://www.youtube.com/watch?v=wE29FTldZHk" target="_blank">
+                <img src="https://img.youtube.com/vi/wE29FTldZHk/hqdefault.jpg" alt="Annabelle 3">
+                <p><strong>Annabelle 3</strong> - Os Warrens enfrentam forças malignas despertadas por Annabelle. #terror #sobrenatural</p>
+            </a>
 
-                const filmeDiv = document.createElement("div");
-                filmeDiv.className = "filme";
+            <!-- Filme 4 -->
+            <a href="https://www.youtube.com/watch?v=NyZlTIk3gcw" target="_blank">
+                <img src="https://img.youtube.com/vi/NyZlTIk3gcw/hqdefault.jpg" alt="O Massacre da Serra Elétrica">
+                <p><strong>O Massacre da Serra Elétrica</strong> - Jovens enfrentam um maníaco com uma serra elétrica. #terror #slasher</p>
+            </a>
 
-                filmeDiv.innerHTML = `
-                    <div class="titulo">${filmeInfo.titulo}</div>
-                    <div class="tags">${filmeInfo.tags}</div>
-                    <iframe width="100%" height="200" src="${filmeInfo.trailer}" frameborder="0" allowfullscreen></iframe>
-                    <div class="sinopse"><strong>Sinopse:</strong> ${filmeInfo.sinopse}</div>
-                    <a href="${filmeInfo.link}" target="_blank">Assista ao filme completo</a>
-                    <div class="dataDisponibilidade"><strong>Disponível até:</strong> ${filmeInfo.dataDisponibilidade}</div>
-                `;
+            <!-- Filme 5 -->
+            <a href="https://www.youtube.com/watch?v=WkBhoZ4YTkI" target="_blank">
+                <img src="https://img.youtube.com/vi/WkBhoZ4YTkI/hqdefault.jpg" alt="Halloween (2018)">
+                <p><strong>Halloween (2018)</strong> - Michael Myers retorna para seu confronto final. #terror #slasher</p>
+            </a>
 
-                listaFilmes.appendChild(filmeDiv);
-            }
-        }
+            <!-- Filme 6 -->
+            <a href="https://www.youtube.com/watch?v=n-fCcsL-Qgc" target="_blank">
+                <img src="https://img.youtube.com/vi/n-fCcsL-Qgc/hqdefault.jpg" alt="Sorria Você é o Próximo">
+                <p><strong>Sorria Você é o Próximo</strong> - Assassinos mascarados caçam uma família. #terror #slasher</p>
+            </a>
 
-        // Chama a função para exibir os filmes quando a página for carregada
-        mostrarFilmes();
-    </script>
+            <!-- Filme 7 -->
+            <a href="https://www.youtube.com/watch?v=h9Q4zZS2v1k" target="_blank">
+                <img src="https://img.youtube.com/vi/h9Q4zZS2v1k/hqdefault.jpg" alt="Invocação do Mal 3">
+                <p><strong>Invocação do Mal 3</strong> - Os Warrens enfrentam um caso assustador. #terror #sobrenatural</p>
+            </a>
 
+            <!-- Filme 8 -->
+            <a href="https://www.youtube.com/watch?v=Kp_-KZH_vlQ" target="_blank">
+                <img src="https://img.youtube.com/vi/Kp_-KZH_vlQ/hqdefault.jpg" alt="O Grito">
+                <p><strong>O Grito</strong> - Uma maldição mortal assombra uma casa amaldiçoada. #terror #sobrenatural</p>
+            </a>
+
+            <!-- Filme 9 -->
+            <a href="https://www.youtube.com/watch?v=jFBGUT1sV40" target="_blank">
+                <img src="https://img.youtube.com/vi/jFBGUT1sV40/hqdefault.jpg" alt="A Freira">
+                <p><strong>A Freira</strong> - Um convento amaldiçoado guarda um segredo terrível. #terror #sobrenatural</p>
+            </a>
+        </div>
+    </section>
 </body>
 </html>
