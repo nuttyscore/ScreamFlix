@@ -11,6 +11,31 @@
         href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700&display=swap"
         rel="stylesheet">
     <title>SCREAMFLIX</title>
+    <style>
+        body {
+            background-color: #121212;
+            color: #fff;
+            font-family: 'Chakra Petch', sans-serif;
+        }
+
+        .info-filme {
+            display: none;
+            position: absolute;
+            background-color: #333;
+            padding: 10px;
+            border-radius: 5px;
+            z-index: 10;
+        }
+
+        .info-container {
+            position: relative;
+            display: inline-block;
+        }
+
+        .info-container:hover .info-filme {
+            display: block;
+        }
+    </style>
 </head>
 
 <body>
@@ -67,6 +92,10 @@
                 </a>
                 <button onclick="mostrarInformacoes()">Mais informações</button>
             </div>
+            <div class="info-container">
+                <p>Último dia para assistir a este título: 3 de novembro</p>
+                <div class="info-filme">Um grupo de crianças enfrenta uma entidade maligna que assume a forma de seus piores medos, incluindo o palhaço Pennywise. Juntos, eles devem lutar para sobreviver e resgatar seus amigos desaparecidos.</div>
+            </div>
         </div>
         <div class="chamada-video">
             <iframe width="100%" height="315" src="https://www.youtube.com/embed/xKJmEC5ieOk" title="YouTube video player"
@@ -108,7 +137,7 @@
 
     <script>
         function mostrarInformacoes() {
-            alert("IT: A COISA (2017)\n\nSinopse: Um grupo de crianças enfrenta uma entidade maligna que assume a forma de seus piores medos, incluindo o palhaço Pennywise. Juntos, eles devem lutar para sobreviver e resgatar seus amigos desaparecidos.");
+            alert("IT: A COISA\n\nSinopse: Um grupo de crianças enfrenta uma entidade maligna que assume a forma de seus piores medos, incluindo o palhaço Pennywise. Juntos, eles devem lutar para sobreviver e resgatar seus amigos desaparecidos.");
         }
     </script>
 </body>
