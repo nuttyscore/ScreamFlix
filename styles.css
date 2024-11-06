@@ -106,7 +106,7 @@ nav ul li:hover .submenu {
 }
 
 .buttons button:hover {
-    background-color: #b0070d; /* muda a cor do botão ao passar o mouse */
+    background-color: #ff0008; /* muda a cor do botão ao passar o mouse */
     transition: background-color 0.3s; /* efeito suave na transição de cor */
 }
 
